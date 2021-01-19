@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">ILX</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="btn_email_e_senha">Continuar com email e senha</string>
+    <string name="btn_convidado">Continuar como convidado</string>
+    <string name="hint_e_mail">E-mail</string>
+    <string name="hint_senha">Senha</string>
+    <string name="btn_continuar_cadastro">Continuar Cadastro</string>
+    <string name="hint_confirme_a_senha">Confirme a senha</string>
+    <string name="text_confirmar_senha">Confirmar senha</string>
+    <string name="hint_nome_completo">Nome completo</string>
+
+    <string name="inserir_anuncio">Inserir Anúncio</string>
+    <string name="notificacoes">Notificações</string>
+    <string name="chat">Chat</string>
+    <string name="minha_conta">Minha Conta</string>
+    <string name="acesse_sua_conta_agora">Acesse sua conta agora!</string>
+    <string name="clique_aqui">Clique aqui</string>
+    <string name="central_de_ajuda">Central de Ajuda</string>
+    <string name="sobre_a_olx">Sobre a Olx</string>
+    <string name="dicas_de_seguranca">Dicas de Segurança</string>
+    <string name="termos_de_uso">Termos de Uso</string>
+    <string name="avalie_na_google_play">Avalie na Google Play</string>
+    <string name="curta_no_facebook">Curta no Facebook</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

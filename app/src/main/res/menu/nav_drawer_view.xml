@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:id="@+id/group_logado">
+
+        <item
+            android:icon="@drawable/ic_baseline_bookmark_border_24"
+            android:id="@+id/nav_advert"
+            android:title="Anúncios" />
+
+        <item
+            android:id="@+id/nav_insert_advert"
+            android:icon="@drawable/ic_outline_edit_24"
+            android:title="Inserir Anúncio" />
+
+        <item
+            android:id="@+id/itemNotificacoes"
+            android:icon="@drawable/ic_outline_notifications_24"
+            android:title="Notificações" />
+
+        <item
+            android:id="@+id/itemChat"
+            android:icon="@drawable/ic_baseline_chat_bubble_outline_24"
+            android:title="Chat" />
+
+        <item
+            android:id="@+id/nav_my_advert"
+            android:icon="@drawable/ic_outline_local_offer_24"
+            android:title="Meus Anúncios" />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_baseline_perm_identity_24"
+            android:title="Minha Conta" />
+
+
+    </group>
+
+    <item android:title="">
+
+        <menu>
+
+            <item
+                android:id="@+id/itemCentralAjuda"
+                android:title="Central de Ajuda" />
+
+            <item
+                android:id="@+id/itemSobreOlx"
+                android:title="Sobre" />
+
+            <item
+                android:id="@+id/itemDicasSeguranca"
+                android:title="Dicas de Segurança" />
+
+            <item
+                android:id="@+id/itemTermos"
+                android:title="Termos de Uso" />
+
+            <item
+                android:id="@+id/itemAvalie"
+                android:title="Avalie na Google Play" />
+
+            <item
+                android:id="@+id/itemFacebook"
+                android:title="Curta no Facebook" />
+
+        </menu>
+
+    </item>
+
+</menu>

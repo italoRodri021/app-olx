@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/perfilUsuarioFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/purple_500"
+                android:gravity="center|left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:padding="5dp"
+                    android:text="Seus dados"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="Nome"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editNomePerfil"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shape_edit_text"
+                android:hint="Nome"
+                android:maxLength="100"
+                android:padding="10dp"
+                android:textColor="@color/purple_700" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="E-mail"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editEmailPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shape_edit_text"
+                android:enabled="false"
+                android:hint="E-mail"
+                android:maxLength="100"
+                android:padding="10dp"
+                android:textColor="@color/purple_700" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="Telefone"
+                android:textColor="@color/black" />
+
+            <com.santalu.maskara.widget.MaskEditText
+                android:id="@+id/editTelefonePerfil"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shape_edit_text"
+                android:hint="Telefone"
+                android:inputType="number"
+                android:maxLength="25"
+                android:padding="10dp"
+                android:textColor="@color/purple_700"
+                app:mask="+55 (__) _____ ____"
+                app:maskCharacter="_"
+                app:maskStyle="normal" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="Estado"
+                android:textColor="@color/black" />
+
+            <Spinner
+                android:id="@+id/spinnerEstadoPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shape_edit_text"
+                android:padding="5dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="Cep"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editCepPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shape_edit_text"
+                android:hint="Cep"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColor="@color/purple_700" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="Meu local"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:id="@+id/textMeuLocalPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shape_balloon"
+                android:gravity="center|left"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:text="João Pessoa,Paraiba - 58062012"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btnMeuLocalPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shape_button"
+                android:text="Buscar Local"
+                app:backgroundTintMode="add" />
+
+            <Button
+                android:id="@+id/btnSalvarPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/shape_button"
+                android:text="Salvar"
+                app:backgroundTintMode="add" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

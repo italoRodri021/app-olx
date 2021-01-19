@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_advert">
+
+    <fragment
+        android:id="@+id/nav_advert"
+        android:name="com.dinomobile.olxapp.ui.AdvertsFragment"
+        android:label="Anúncios"
+        tools:layout="@layout/fragment_adverts" />
+
+    <fragment
+        android:id="@+id/nav_insert_advert"
+        android:name="com.dinomobile.olxapp.ui.InsertAdvertsFragment"
+        android:label="Inserir Anúncio"
+        tools:layout="@layout/fragment_insert_adverts" />
+
+    <fragment
+        android:id="@+id/nav_favorites"
+        android:name="com.dinomobile.olxapp.ui.FavoritesFragment"
+        android:label="Meus Favoritos"
+        tools:layout="@layout/fragment_favorites" />
+
+    <fragment
+        android:id="@+id/nav_my_advert"
+        android:name="com.dinomobile.olxapp.ui.MyAdvertsFragment"
+        android:label="Meus Anúncios"
+        tools:layout="@layout/fragment_my_adverts" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.dinomobile.olxapp.ui.ProfileFragment"
+        android:label="Minha Conta"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

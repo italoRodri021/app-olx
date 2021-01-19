@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "332336677806",
+    "firebase_url": "https://app-olx-a5c9c-default-rtdb.firebaseio.com",
+    "project_id": "app-olx-a5c9c",
+    "storage_bucket": "app-olx-a5c9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332336677806:android:55661e6dcd967ebaadfe3f",
+        "android_client_info": {
+          "package_name": "com.dinomobile.olxapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "332336677806-9tmriv28u104fj1bouctb6mmolpu6o19.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dinomobile.olxapp",
+            "certificate_hash": "c9b7e4f3f5177cfd28860147dd0543de78ffd714"
+          }
+        },
+        {
+          "client_id": "332336677806-pm6gjqlfg6clla1tvusi1gtahn8g9q6p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB82nIsLdX158en5FGBGXfFbCaFE816OB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "332336677806-pm6gjqlfg6clla1tvusi1gtahn8g9q6p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

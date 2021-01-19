@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inserirAnuncioFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.InsertAdvertsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_card_photo">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_round_add_a_photo_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerFotosAnuncio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="3dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/adapter_select_photos" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btnSelectPhotoAdvert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/shape_button"
+                android:text="Selecionar Fotos"
+                app:backgroundTintMode="add" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="Titulo do Anúncio"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editTituloAnuncio"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/shape_edit_text"
+                android:hint="Ex: Sansung S9 novo na caixa"
+                android:maxLength="100"
+                android:padding="10dp"
+                android:textColor="@color/purple_700" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="Descrição"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editDescricaoAnuncio"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/shape_edit_text"
+                android:gravity="left"
+                android:hint="Ex: Smartphone Sansung Galaxy S9
+                 com 128gb de memoria, com caixa, todos os cabos e sem marcas de uso."
+                android:inputType="textMultiLine"
+                android:maxLength="200"
+                android:padding="10dp"
+                android:textColor="@color/purple_700" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="Categoria"
+                android:textColor="@color/black" />
+
+            <Spinner
+                android:id="@+id/spinnerCategoriaAnuncio"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/shape_edit_text"
+                android:padding="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="Condição"
+                android:textColor="@color/black" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shape_edit_text">
+
+                <RadioButton
+                    android:id="@+id/radioNovo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:checked="true"
+                    android:padding="2dp"
+                    android:text="Novo"
+                    android:textColor="@color/purple_700" />
+
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <RadioButton
+                    android:id="@+id/radioUsado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:padding="2dp"
+                    android:text="Usado"
+                    android:textColor="@color/purple_700" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="Preço"
+                android:textColor="@color/black" />
+
+            <com.blackcat.currencyedittext.CurrencyEditText
+                android:id="@+id/editPrecoAnuncio"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shape_edit_text"
+                android:maxLength="20"
+                android:padding="10dp"
+                android:textColor="@color/purple_700" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="16dp"
+                android:padding="5dp"
+                android:text="CEP*"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editCepAnuncio"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/shape_edit_text"
+                android:hint="12345-678"
+                android:inputType="numberDecimal"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="@color/purple_700" />
+
+            <Button
+                android:id="@+id/btnEnviarAnuncio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/shape_button"
+                android:text="Enviar Anúncio"
+                app:backgroundTintMode="add" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
