@@ -175,6 +175,8 @@ public class InsertAdvertsFragment extends Fragment {
         btnSendAdvert.setClickable(false);
         String idAdvert = database.push().getKey();
 
+        Advert a = new Advert();
+
         for (Photo photo : listPhoto) {
 
             String idPhoto = database.push().getKey();
@@ -189,7 +191,6 @@ public class InsertAdvertsFragment extends Fragment {
                     String url = task.getResult().toString();
                     listUrl.add(url);
 
-                    Advert a = new Advert();
                     a.setIdUser(idUser);
                     a.setCategory(category);
                     a.setNameUser(nameUser);

@@ -18,8 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
             android:text="Em Destaque"
             android:textColor="@color/white"
             android:textSize="16sp" />
@@ -30,15 +30,16 @@
             android:layout_height="45dp"
             android:layout_margin="10dp"
             android:background="@drawable/shape_card"
-            android:elevation="1dp" />
+            android:elevation="1dp"
+            android:queryHint="Busque por carros, roupas, brinquedos e etc." />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerAnuncios"
         android:layout_width="match_parent"
-        android:layout_marginTop="100dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:visibility="visible"
         tools:listitem="@layout/adapter_adverts" />
 
@@ -48,25 +49,25 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
-        android:elevation="20dp"
+        android:elevation="10dp"
         android:src="@drawable/ic_baseline_filter_list_24" />
 
-    <FrameLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/snackBarFiltros"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:layout_gravity="bottom"
-        android:clickable="false"
         android:background="@drawable/shape_snackbar"
         android:backgroundTint="@color/purple_500"
-        android:elevation="10dp"
+        android:clickable="false"
+        android:elevation="5dp"
         android:visibility="gone">
 
         <LinearLayout
-            android:layout_marginTop="16dp"
-            android:elevation="3dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:elevation="3dp"
             android:orientation="vertical">
 
             <TextView
@@ -77,7 +78,7 @@
                 android:layout_marginRight="16dp"
                 android:text="Filtros"
                 android:textColor="@color/white"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -110,12 +111,13 @@
                 android:orientation="horizontal">
 
                 <ToggleButton
+                    android:id="@+id/togglePrecoFiltro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textOff="Menor Preço"
-                    android:textOn="Maior Preço"
+                    android:background="@drawable/shape_card"
                     android:padding="5dp"
-                    android:background="@drawable/shape_card"/>
+                    android:textOff="Menor Preço"
+                    android:textOn="Maior Preço" />
 
             </LinearLayout>
 
@@ -129,6 +131,6 @@
         </LinearLayout>
 
 
-    </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

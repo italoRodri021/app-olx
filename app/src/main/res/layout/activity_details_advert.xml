@@ -62,7 +62,10 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="Iniciar Chat"/>
+                android:background="@drawable/shape_button"
+                android:backgroundTint="@color/teal_200"
+                android:text="Iniciar Chat"
+                app:backgroundTint="@color/teal_200" />
 
             <View
                 android:layout_width="match_parent"

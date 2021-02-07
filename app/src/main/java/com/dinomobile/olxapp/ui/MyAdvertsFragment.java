@@ -147,6 +147,7 @@ public class MyAdvertsFragment extends Fragment {
                                     .child("Adverts").child(idAdvert)
                                     .child(idAdvert + ".JPEG");
                             photo.delete();
+                            adapter.notifyDataSetChanged();
 
                             snackBar("Anúncio excluido com sucesso!");
 

@@ -1,5 +1,7 @@
 package com.dinomobile.olxapp.ui;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,10 +11,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -32,6 +35,7 @@ import com.dinomobile.olxapp.helper.RecyclerClick;
 import com.dinomobile.olxapp.model.Advert;
 import com.dinomobile.olxapp.model.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -44,12 +48,13 @@ import java.util.List;
 
 public class AdvertsFragment extends Fragment {
 
-    private static String idUser, stateLocalUser;
+    private static String idUser, stateLocalUser, getStateLocalSpinner, getCategorySpinner;
     private SearchView searchView;
     private TextView textCategoria;
     private FloatingActionButton fabSnackBar;
     private Button btnFilter;
-    private FrameLayout snackBarFiltros;
+    private ToggleButton toggleBtnPrice;
+    private CoordinatorLayout snackBarFiltros;
     private RecyclerView recyclerAdverts;
     private AdapterAdverts adapter;
     private Spinner spinnerCategory, spinnerLocation;
@@ -99,6 +104,7 @@ public class AdvertsFragment extends Fragment {
                 if (snapshot.getValue() != null) {
                     User u = snapshot.getValue(User.class);
                     stateLocalUser = u.getStateLocation();
+                    getStateLocalSpinner = u.getStateLocation();
 
                     if (stateLocalUser != null) {
 
@@ -119,6 +125,7 @@ public class AdvertsFragment extends Fragment {
 
     public void configInteface() {
 
+        getCategorySpinner = "Autos e peças"; // -> Categoria inicial para o seachview
         ArrayAdapter<String> category = new ArrayAdapter<String>
                 (getContext(), R.layout.spinner_item, Data.CATEGORY);
         category.setDropDownViewResource(R.layout.spinner_dropdown);
@@ -130,7 +137,8 @@ public class AdvertsFragment extends Fragment {
         spinnerLocation.setAdapter(location);
 
         btnFilter.setOnClickListener(v -> {
-
+            getStateLocalSpinner = spinnerLocation.getSelectedItem().toString();
+            getCategorySpinner = spinnerCategory.getSelectedItem().toString();
             filterAdvert();
         });
 
@@ -138,10 +146,7 @@ public class AdvertsFragment extends Fragment {
 
     public void filterAdvert() {
 
-        String stateLocalSelect = spinnerLocation.getSelectedItem().toString();
-        String categorySelect = spinnerCategory.getSelectedItem().toString();
-
-        DatabaseReference data = database.child("Adverts").child(stateLocalSelect);
+        DatabaseReference data = database.child("Adverts").child(getStateLocalSpinner);
 
         data.addValueEventListener(new ValueEventListener() {
             @Override
@@ -154,9 +159,9 @@ public class AdvertsFragment extends Fragment {
 
                         Advert a = category.getValue(Advert.class);
 
-                        if (a.getCategory().equals(categorySelect))
+                        if (a.getCategory().equals(getCategorySpinner))
                             listAdverts.add(a);
-                        textCategoria.setText(stateLocalSelect + " | " + categorySelect);
+                        textCategoria.setText(getStateLocalSpinner + " | " + getCategorySpinner);
 
                     }
                 }
@@ -204,7 +209,6 @@ public class AdvertsFragment extends Fragment {
 
     public void configSearch() {
 
-        searchView.setQueryHint("Busque por carros, roupas, brinquedos e etc.");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -213,7 +217,8 @@ public class AdvertsFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                search(newText);
+
+                search(newText); // -> chamando metodo para fazer a pesquisa
                 return true;
             }
         });
@@ -224,18 +229,15 @@ public class AdvertsFragment extends Fragment {
 
     }
 
-    public void search(String text) {
-
-        String stateLocalUser = spinnerLocation.getSelectedItem().toString();
-        String category = spinnerCategory.getSelectedItem().toString();
+    public void search(String textEditSeach) {
 
         DatabaseReference search = database
                 .child("Adverts")
-                .child(stateLocalUser)
-                .child(category);
-        Query query = search.orderByChild("title").startAt(text).endAt("\uf8ff");
+                .child(getStateLocalSpinner)
+                .child(getCategorySpinner);
+        Query query = search.orderByChild("title").startAt(textEditSeach).endAt("\uf8ff");
 
-        if (text.length() >= 4 && !stateLocalUser.isEmpty() && !category.isEmpty()) {
+        if (textEditSeach.length() >= 4 && !getStateLocalSpinner.isEmpty() && !getCategorySpinner.isEmpty()) {
 
             query.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -244,9 +246,9 @@ public class AdvertsFragment extends Fragment {
                     listAdverts.clear();
 
                     for (DataSnapshot ds : snapshot.getChildren()) {
-                            Advert advert = ds.getValue(Advert.class);
+                        Advert advert = ds.getValue(Advert.class);
 
-                            listAdverts.add(advert);
+                        listAdverts.add(advert);
 
                     }
                     adapter.notifyDataSetChanged();
@@ -317,6 +319,7 @@ public class AdvertsFragment extends Fragment {
         textCategoria = v.findViewById(R.id.textStatusCategoria);
         searchView = v.findViewById(R.id.searchViewAdvert);
         btnFilter = v.findViewById(R.id.btnFiltrarAnuncios);
+        toggleBtnPrice = v.findViewById(R.id.togglePrecoFiltro);
 
         adapter = new AdapterAdverts(getContext(), listAdverts);
         recyclerAdverts.setLayoutManager(new LinearLayoutManager(getContext()));

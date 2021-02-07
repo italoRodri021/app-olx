@@ -47,7 +47,7 @@ public class AdapterSelectPhoto extends RecyclerView.Adapter<AdapterSelectPhoto.
         return listPhoto.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imagePhoto;
 

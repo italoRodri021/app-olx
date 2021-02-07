@@ -231,6 +231,7 @@
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/shape_button"
                 android:text="Enviar Anúncio"
+                app:backgroundTint="@color/teal_200"
                 app:backgroundTintMode="add" />
 
         </LinearLayout>
